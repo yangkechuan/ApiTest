@@ -36,7 +36,7 @@ class Test_feed_v3_7(object):
             gif在第二页才出现
         :return:
         """
-        request = Feed.request(page=2)
+        request = Feed.request(page=2, ver=self.ver)
         gif = Feed(request).gif()
         if gif is not None:
             assert type(gif['id']) is int

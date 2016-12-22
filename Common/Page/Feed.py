@@ -42,7 +42,7 @@ class Feed(object):
         return request
 
     """
-    不感兴趣功能，可以在feed流删除该文章
+    不感兴趣功能，可以在feed流删除该文章,默认删除第五页，第一条数据
     """
     @staticmethod
     def article_remove(page=5, ver=3.7):

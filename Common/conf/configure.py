@@ -25,10 +25,15 @@ if STATUS == 'test':
 if STATUS == 'prod':
 
     ConfList = {
-        'accesstoken': 'd9c29080f4d6681a35d0ebd93a9242f0',
+        'clientid': '96b24bf126a71d2af56b0023d105cf08f675510d2656cbed25187c7610cbc1d3',
+        'access_token': '238bdf2dcb06be52875afd77df7106a1',
+        'accesstoken': '03479980758f45657d2aec3883ea2d94',
         'hostname': 'http://api.app.happyjuzi.com',
-        'uid': '3884832497361059',
+        'mobile': 18611425451,
+        'uid': '4055433308488339',
         'pf': 'android',
         'content': 'juzi',
         'channel': 'juzi',
+        'pass': 123456,
+
     }
