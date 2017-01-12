@@ -32,4 +32,4 @@ class Comment(object):
             request = requests.post(url=ConfList['hostname'] + '/comment/create', data=data)
             return request.json()
         except requests.RequestException as e:
-            raise e
+            pass

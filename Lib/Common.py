@@ -26,7 +26,7 @@ class Common(object):
             request = requests.get(url=ConfList['hostname'] + '/common/setting', params=params)
             return request.json()
         except Exception as e:
-            raise e
+            pass
 
     @staticmethod
     def common_menu(uid, accesstoken, ver, pf='android'):
@@ -48,4 +48,4 @@ class Common(object):
             request = requests.get(url=ConfList['hostname'] + '/common/menu', params=params)
             return request.json()
         except Exception as e:
-            raise e
+            pass

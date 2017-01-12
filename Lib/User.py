@@ -31,7 +31,7 @@ class User(object):
             request = requests.get(ConfList['hostname'] + '/user/is_register', params=params)
             return request.json()
         except Exception as e:
-            raise e
+            pass
 
     @staticmethod
     def login(uid, accesstoken, access_token, clientid, mobile, password, ver):
@@ -59,4 +59,4 @@ class User(object):
             request = requests.post(ConfList['hostname'] + '/user/login', data=data)
             return request.json()
         except Exception as e:
-            raise e
+            pass

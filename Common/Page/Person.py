@@ -8,11 +8,12 @@ class Person(object):
     def __init__(self, data):
         self.data = data
 
-    """
-    用户登录信息
-    """
     @staticmethod
     def login(ver=3.7):
+        """用户登录信息
+        :param ver: 版本号
+        :return: json
+        """
         request = User.login(uid=ConfList['uid'],
                              accesstoken=ConfList['accesstoken'],
                              access_token=ConfList['access_token'],

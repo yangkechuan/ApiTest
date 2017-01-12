@@ -32,7 +32,7 @@ class Article(object):
             request = requests.get(ConfList['hostname'] + '/article/list/home', params=params)
             return request.json()
         except Exception as e:
-            raise e
+            pass
 
     @staticmethod
     def article_list_subscribe(uid, accesstoken, ver, islogin=0, page=1, channel='', pf='android'):
@@ -61,7 +61,7 @@ class Article(object):
             request = requests.get(ConfList['hostname'] + '/article/list/subscribe', params=params)
             return request.json()
         except Exception as e:
-            raise e
+            pass
 
     @staticmethod
     def article_remove(uid, accesstoken, id, ver, pf='android'):
@@ -85,5 +85,5 @@ class Article(object):
             request = requests.post(ConfList['hostname'] + '/article/remove', data=data)
             return request.json()
         except Exception as e:
-            raise e
+            pass
 
