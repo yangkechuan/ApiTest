@@ -4,13 +4,16 @@ APP_PATH=$(cd `dirname $0`; pwd)
 
 cd $APP_PATH
 
-py.test > apiTest.log  --html=report.html --self-contained-html
+py.test > apiTest.log  --html=report.html
 
-echo "run time: `date '+%Y-%m-%d %H:%M:%S'` \n" >> run.log
+echo "run time: `date '+%Y-%m-%d %H:%M:%S'`" >> run.log
 
-cat apitest.log >> run.log
+echo "\n" >> run.log
 
-echo "\n\n" >> run.log
+cat apiTest.log >> run.log
+
+echo "\n \n" >> run.log
 
 
-python3 checkError.py;
+
+python checkError.py;
