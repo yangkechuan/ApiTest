@@ -8,12 +8,11 @@ py.test > apiTest.log  --html=report.html --self-contained-html
 
 
 echo "run time: `date '+%Y-%m-%d %H:%M:%S'`" >> run.log
-
-echo "\n" >> run.log
+echo "" >> run.log
 
 cat apiTest.log >> run.log
 
-echo "\n \n" >> run.log
+echo "" >> run.log
 
 
 
