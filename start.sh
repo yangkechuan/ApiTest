@@ -15,5 +15,5 @@ cat apiTest.log >> run.log
 echo "" >> run.log
 
 
-
-python checkError.py;
+python3 db.py
+python3 checkError.py;

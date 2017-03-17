@@ -21,6 +21,7 @@ _author by ykc_
            1.requests       :  网络请求
            2.pytest         ： 测试框架
            3.pytest-html    ： 生成报表
+           4.pymysql        ： 写日志到数据库
 
 ----------
 
