@@ -33,7 +33,7 @@ class Db(object):
 
     def write_sql(self, content, status):
         sql = """
-            INSERT INTO `api_log`(content, status, created_at, updated_at) VALUES ('{content}', {status},now(),now())
+            INSERT INTO `api_log`(content, status, created_at, updated_at) VALUES ("{content}", {status},now(),now())
         """.format(content=content, status=status)
         self.cur.execute(sql)
         self.conn.commit()

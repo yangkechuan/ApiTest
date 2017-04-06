@@ -1,0 +1,14 @@
+# Created by .ignore support plugin (hsz.mobi)
+.cache/
+.idea
+Common/Page/__pycache__/
+Common/__pycache__/
+Common/conf/__pycache__/
+Lib/__pycache__/
+Ver/__pycache__/
+Ver/v3_7/__pycache__/
+__pycache__/
+apiTest.log
+report.html
+run.log
+test.py
