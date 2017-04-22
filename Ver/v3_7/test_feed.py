@@ -10,7 +10,6 @@ class Test_feed_v3_7(object):
     ver = v3_7conf['ver']
 
     def test_banner(self):
-
         request = Feed.request(ver=self.ver)
         banner = Feed(request).banner()
         assert len(banner) >= 1
@@ -22,8 +21,22 @@ class Test_feed_v3_7(object):
             assert msg['title'] != ''
             assert msg['pic'] != ''
 
-    def test_operation(self):
+    def test_topic_recommend(self):
+        request = Feed.request(ver=self.ver)
+        topic = Feed(request).topic_recommend()
+        if topic is not None:
+            assert isinstance(topic['id'], int)
+            assert topic['urlroute'] != ''
+            assert topic['title'] != ''
+            assert topic['pic'] != ''
+            assert topic['artnum'] == len(topic['article'])
+            for article in topic['article']:
+                assert isinstance(article['id'], int)
+                assert article['title'] != ''
+                assert article['pic'] != ''
+                assert article['urlroute'] != ''
 
+    def test_operation(self):
         request = Feed.request(ver=self.ver)
         operation = Feed(request).operation()
         if operation is not None:
@@ -53,7 +66,6 @@ class Test_feed_v3_7(object):
             assert gif['display'] == 0
 
     def test_photo(self):
-
         request = Feed.request(ver=self.ver)
         photos = Feed(request).photo_gallary()
         if len(photos) >= 1:
@@ -71,7 +83,6 @@ class Test_feed_v3_7(object):
                     assert img['img'] != ''
 
     def test_ad(self):
-
         request = Feed.request(ver=self.ver)
         ads = Feed(request).advertisement()
         if len(ads) >= 1:

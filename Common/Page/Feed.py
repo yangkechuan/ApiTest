@@ -7,6 +7,10 @@ from Common.conf.configure import ConfList
 class Feed(object):
 
     def __init__(self, data):
+        """初始化数据
+        
+        :param data:Feed流数据 
+        """
         self.data = data
 
     def banner(self):
@@ -15,6 +19,17 @@ class Feed(object):
         :return: banner位数据
         """
         return self.data['data']['info']
+
+    def topic_recommend(self):
+        """专题推荐
+        
+        专题推荐在banner下的第一个位置，可以不存在
+        :return:专题文章 
+        """
+        topic = self.data['data']['list'][0]
+        if topic['type'] == 3:
+            return topic
+        return None
 
     def operation(self):
         """运营位
@@ -38,6 +53,7 @@ class Feed(object):
 
     def photo_gallary(self):
         """图集文章
+        
         同一页数据中可能存在多个图集，全部返回并验证
         :return: 图集文章
         """
@@ -49,6 +65,7 @@ class Feed(object):
 
     def advertisement(self):
         """广告
+        
         Feed流的广告有banner和list两个地方
         :return: 
         """
