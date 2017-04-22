@@ -52,6 +52,36 @@ class Test_feed_v3_7(object):
             assert gif['replynum'] >= 0
             assert gif['display'] == 0
 
+    def test_photo(self):
+
+        request = Feed.request(ver=self.ver)
+        photos = Feed(request).photo_gallary()
+        if len(photos) >= 1:
+            for photo in photos:
+                assert photo['type'] == 8
+                assert photo['readnum'] >= 0
+                assert photo['replynum'] >= 0
+                assert photo['urlroute'] != ''
+                assert photo['title'] != ''
+                assert photo['pic'] != ''
+                assert photo['cat']['name'] != ''
+                assert photo['cat']['icon'] != ''
+                assert len(photo['contents']) >= 1
+                for img in photo['contents']:
+                    assert img['img'] != ''
+
+    def test_ad(self):
+
+        request = Feed.request(ver=self.ver)
+        ads = Feed(request).advertisement()
+        if len(ads) >= 1:
+            for ad in ads:
+                assert ad['advertise'] is True
+                assert isinstance(ad['id'], int)
+                assert ad['title'] != ''
+                assert isinstance(ad['urlroute'], str)
+                assert ad['pic'] != ''
+
     def test_article_remove(self):
         result = Feed.article_remove(page=5, ver=self.ver)
         assert result['code'] == 1

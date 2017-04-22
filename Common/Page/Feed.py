@@ -29,13 +29,37 @@ class Feed(object):
     def gif(self):
         """Feed流Gif
 
-        :return:
+        :return:Feed流gif
         """
         for gif in self.data['data']['list']:
             if 'gif' in gif:
                 return gif
         return None
 
+    def photo_gallary(self):
+        """图集文章
+        同一页数据中可能存在多个图集，全部返回并验证
+        :return: 图集文章
+        """
+        photos = []
+        for photo in self.data['data']['list']:
+            if photo['type'] == 8:
+                photos.append(photo)
+        return photos
+
+    def advertisement(self):
+        """广告
+        Feed流的广告有banner和list两个地方
+        :return: 
+        """
+        ads = []
+        for ad in self.data['data']['info']:
+            if 'advertise' in ad:
+                ads.append(ad)
+        for ad in self.data['data']['list']:
+            if 'advertise' in ad:
+                ads.append(ad)
+        return ads
 
 # ######################################################################
 #             以下为feed流功能点
