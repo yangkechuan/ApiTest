@@ -1,7 +1,7 @@
 # -*-coding:UTF-8-*-
 
 
-from Common.Page.Feed import Feed
+from Common.juzi.Page.Feed import Feed
 from Ver.v3_7.v3_7conf import v3_7conf
 
 

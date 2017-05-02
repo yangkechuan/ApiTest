@@ -10,7 +10,7 @@ class User(object):
     判断用户是否是使用手机号注册过
     """
     @staticmethod
-    def is_register(uid, accesstoken, mobile, ver, pf='android'):
+    def is_register(hostname, uid, accesstoken, mobile, ver, pf='android'):
         """
         user/is_register GET
         :param uid: 用户ID
@@ -28,13 +28,13 @@ class User(object):
             'pf': pf
         }
         try:
-            request = requests.get(ConfList['hostname'] + '/user/is_register', params=params)
+            request = requests.get(url=hostname + '/user/is_register', params=params)
             return request.json()
         except Exception as e:
             pass
 
     @staticmethod
-    def login(uid, accesstoken, access_token, clientid, mobile, password, ver):
+    def login(hostname, uid, accesstoken, access_token, clientid, mobile, password, ver):
         """
         user/login POST
         :param uid: 用户ID
@@ -56,7 +56,7 @@ class User(object):
             'ver': ver
         }
         try:
-            request = requests.post(ConfList['hostname'] + '/user/login', data=data)
+            request = requests.post(hostname + '/user/login', data=data)
             return request.json()
         except Exception as e:
             pass

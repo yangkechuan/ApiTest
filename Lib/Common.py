@@ -7,7 +7,7 @@ from Common.conf.configure import ConfList
 class Common(object):
 
     @staticmethod
-    def common_setting(uid, accesstoken, ver, pf='android'):
+    def common_setting(hostname, uid, accesstoken, ver, pf='android'):
         """
         common/setting GET
         :param uid:user id
@@ -23,13 +23,13 @@ class Common(object):
             'ver': ver
         }
         try:
-            request = requests.get(url=ConfList['hostname'] + '/common/setting', params=params)
+            request = requests.get(url=hostname + '/common/setting', params=params)
             return request.json()
         except Exception as e:
             pass
 
     @staticmethod
-    def common_menu(uid, accesstoken, ver, pf='android'):
+    def common_menu(hostname, uid, accesstoken, ver, pf='android'):
         """
         common/menu GET
         :param uid: user id
@@ -45,7 +45,7 @@ class Common(object):
             'ver': ver
         }
         try:
-            request = requests.get(url=ConfList['hostname'] + '/common/menu', params=params)
+            request = requests.get(url=hostname + '/common/menu', params=params)
             return request.json()
         except Exception as e:
             pass

@@ -1,7 +1,7 @@
 # -*-coding:UTF-8-*-
 
+from Common.juzi.Page.Subscribe import Subscribe
 from Ver.v3_7.v3_7conf import v3_7conf
-from Common.Page.Subscribe import Subscribe
 
 
 class Test_subscribe_v3_7(object):

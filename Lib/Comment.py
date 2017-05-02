@@ -7,7 +7,7 @@ from Common.conf.configure import ConfList
 class Comment(object):
 
     @staticmethod
-    def comment_create(uid, accesstoken, aid, content, replyid, ver, pf='android'):
+    def comment_create(hostname, uid, accesstoken, aid, content, replyid, ver, pf='android'):
         """
         comment/create  POST
         :param uid: user id
@@ -29,7 +29,7 @@ class Comment(object):
             'pf': pf
         }
         try:
-            request = requests.post(url=ConfList['hostname'] + '/comment/create', data=data)
+            request = requests.post(url=hostname + '/comment/create', data=data)
             return request.json()
         except requests.RequestException as e:
             pass

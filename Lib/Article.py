@@ -2,13 +2,12 @@
 
 
 import requests
-from Common.conf.configure import ConfList
 
 
 class Article(object):
 
     @staticmethod
-    def article_list_home(uid, accesstoken, page, channel, ver, pf='android'):
+    def article_list_home(hostname, uid, accesstoken, page, channel, ver, pf='android'):
         """
         article/list/home GET
         :param uid: user id
@@ -29,13 +28,13 @@ class Article(object):
             'accesstoken': accesstoken
         }
         try:
-            request = requests.get(ConfList['hostname'] + '/article/list/home', params=params)
+            request = requests.get(hostname + '/article/list/home', params=params)
             return request.json()
         except Exception as e:
             pass
 
     @staticmethod
-    def article_list_subscribe(uid, accesstoken, ver, islogin=0, page=1, channel='', pf='android'):
+    def article_list_subscribe(hostname, uid, accesstoken, ver, islogin=0, page=1, channel='', pf='android'):
         """
         article/list/subscribe GET
         :param uid: user id
@@ -58,13 +57,13 @@ class Article(object):
             'pf': pf
         }
         try:
-            request = requests.get(ConfList['hostname'] + '/article/list/subscribe', params=params)
+            request = requests.get(hostname + '/article/list/subscribe', params=params)
             return request.json()
         except Exception as e:
             pass
 
     @staticmethod
-    def article_remove(uid, accesstoken, id, ver, pf='android'):
+    def article_remove(hostname, uid, accesstoken, id, ver, pf='android'):
         """
         article/remove POST
         :param uid: 用户ID
@@ -82,7 +81,7 @@ class Article(object):
             'pf': pf
         }
         try:
-            request = requests.post(ConfList['hostname'] + '/article/remove', data=data)
+            request = requests.post(hostname + '/article/remove', data=data)
             return request.json()
         except Exception as e:
             pass

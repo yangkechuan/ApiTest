@@ -90,7 +90,8 @@ class Feed(object):
         :param ver: 版本号
         :return: json
         """
-        request = Article.article_list_home(uid=ConfList['uid'],
+        request = Article.article_list_home(hostname=ConfList['hostname'],
+                                            uid=ConfList['uid'],
                                             accesstoken=ConfList['accesstoken'],
                                             page=page,
                                             channel=ConfList['channel'],
@@ -107,7 +108,8 @@ class Feed(object):
         """
 
         article_id = Feed.request(page=page)['data']['list'][0]['id']
-        request = Article.article_remove(uid=ConfList['uid'],
+        request = Article.article_remove(hostname=ConfList['hostname'],
+                                         uid=ConfList['uid'],
                                          accesstoken=ConfList['accesstoken'],
                                          ver=ver,
                                          id=article_id)

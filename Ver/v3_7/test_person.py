@@ -1,6 +1,6 @@
 # -*-coding:UTF-8-*-
+from Common.juzi.Page.Person import Person
 from Ver.v3_7.v3_7conf import v3_7conf
-from Common.Page.Person import Person
 
 
 class Test_person_v3_7(object):

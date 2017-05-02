@@ -14,7 +14,8 @@ class Person(object):
         :param ver: 版本号
         :return: json
         """
-        request = User.login(uid=ConfList['uid'],
+        request = User.login(hostname=ConfList['hostname'],
+                             uid=ConfList['uid'],
                              accesstoken=ConfList['accesstoken'],
                              access_token=ConfList['access_token'],
                              clientid=ConfList['clientid'],

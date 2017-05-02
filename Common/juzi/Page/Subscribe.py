@@ -43,7 +43,8 @@ class Subscribe(object):
 
     @staticmethod
     def request(page=1, ver=3.7, islogin=0):
-        request = Article.article_list_subscribe(uid=ConfList['uid'],
+        request = Article.article_list_subscribe(hostname=ConfList['hostname'],
+                                                 uid=ConfList['uid'],
                                                  accesstoken=ConfList['accesstoken'],
                                                  ver=ver,
                                                  islogin=islogin,
