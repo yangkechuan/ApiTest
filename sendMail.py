@@ -10,12 +10,12 @@ from Common.conf.status import STATUS
 _usr = "yangkechuan@happyjuzi.com"
 _pwd = "xiaochuan.126"
 _to = "yangkechuan@happyjuzi.com"
-# _cc = "ceshi@happyjuzi.com"
+_cc = "ceshi@happyjuzi.com"
 msg = MIMEMultipart()
 msg["Subject"] = STATUS + "环境api自动化测试报警"
 msg["From"] = _usr
 msg["To"] = _to
-# msg['Cc'] = _cc
+msg['Cc'] = _cc
 msg["Accept-Language"] = "zh-CN"
 msg["Accept-Charset"] = "ISO-8859-1,utf-8"
 
