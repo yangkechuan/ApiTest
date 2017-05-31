@@ -8,7 +8,7 @@ from email.mime.text import MIMEText
 from Common.conf.status import STATUS
 
 _usr = "yangkechuan@happyjuzi.com"
-_pwd = "xiaochuan.126"
+_pwd = "******"
 _to = "yangkechuan@happyjuzi.com"
 _cc = "ceshi@happyjuzi.com"
 msg = MIMEMultipart()
